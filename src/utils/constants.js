@@ -20,6 +20,6 @@ export const API_OPTIONS = {
   {identifier:"spanish",name:"Spanish"}
 ];
 
-export const OPENAI_KEY= "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";
+// export const OPENAI_KEY= "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";
 
-export const GEMINI_API_KEY="AIzaSyBgqEzp9c0wIn1QTzVIXJOjqSWcMG-bKwc";
+// export const GEMINI_API_KEY="AIzaSyBgqEzp9c0wIn1QTzVIXJOjqSWcMG-bKwc";
