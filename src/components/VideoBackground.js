@@ -5,21 +5,7 @@ import useMovieTrailer from '../hooks/useMovieTrailer';
 
 const VideoBackground = () => {
     const trailerVideo=useSelector(store=>store.movies?.trailerVideo)
-    // const dispatch=useDispatch();
-    // const getMovieVideos= async()=>{
-    //     const data=await fetch('https://api.themoviedb.org/3/movie/939243/videos?language=en-US', API_OPTIONS)
 
-    //     const json=await data.json();
-    //     console.log(json);
-        
-    //     const filterData=json.results.filter(video=>video.type==="Trailer"); 
-    //     const trailer=filterData.length ? filterData[1]: json.results[0];
-    //     console.log(trailer); 
-    //     dispatch(addTrailerVideo(trailer));
-    // };
-    // useEffect(()=>{
-    //     getMovieVideos();
-    // },[]);
     useMovieTrailer();
   return (
     <div className='w-screen'>

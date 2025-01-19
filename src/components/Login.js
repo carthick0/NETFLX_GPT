@@ -32,7 +32,7 @@ const Login = () => {
 
       // Signed up 
       const user = userCredential.user;
-      console.log(user);
+      
       updateProfile(user, {
         displayName:name.current.value , photoURL: "https://assets.leetcode.com/users/Karthikeya_06/avatar_1733218757.png"
       }).then(() => {
@@ -87,11 +87,11 @@ const Login = () => {
   return (
     <div>
       <Header/>
-      <div className=' absolute bg-inherit'>
-      <img  className='' src={BG_URL}
+      <div className=' fixed inset-0 -z-10'>
+      <img  className='w-full min-h-screen object-cover' src={BG_URL}
       alt='bg'/>
       </div>
-      <form onSubmit={(e)=>e.preventDefault()} className=' w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 py-59 text-white bg-opacity-70 ' >
+      <form onSubmit={(e)=>e.preventDefault()} className='w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 py-59 text-white bg-opacity-70 ' >
         <h1 className=' font-bold text-3xl py-4'>{isSignInForm ? "  Sign In" : "Sign Up" }</h1>
         {!isSignInForm && 
         <input type='text' 

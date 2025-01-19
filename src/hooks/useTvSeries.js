@@ -9,7 +9,7 @@ const useTvSeries = () => {
     const getTvSeries = async () => {
             const response = await fetch('https://api.themoviedb.org/3/tv/popular?page=1', API_OPTIONS);
             const json = await response.json();
-            console.log(json.results);
+            
             dispatch(addTvSeries(json.results)); // Ensure you dispatch json.results
         };
     

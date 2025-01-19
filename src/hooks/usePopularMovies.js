@@ -9,7 +9,7 @@ const usePopularMovies = () => {
     const getPopularMovies = async () => {
         const response = await fetch('https://api.themoviedb.org/3/movie/popular?page=1', API_OPTIONS);
         const json = await response.json();
-        console.log(json.results);
+        
         dispatch(addPopularMovies(json.results)); // Ensure you dispatch json.results
     };
 

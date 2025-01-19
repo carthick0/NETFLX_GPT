@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { toggleGptSearchView } from '../utils/gptSlice';
 import { SUPPORTED_LANGUAGES } from '../utils/constants';
-import lang from '../utils/languageConstants';
+
 import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
@@ -53,13 +53,13 @@ useEffect(()=>{
   }
 
   return (
-    <div className=' absolute w-screen px-8 py-2 bg-gradient-to-b from-stone-900 z-10 flex justify-between' >
-      <img className='w-44'
+    <div className=' absolute w-screen px-8 py-2 bg-gradient-to-b from-stone-900 z-10 flex flex-col md:flex-row  justify-between' >
+      <img className=' w-44 mx-auto md:mx-0 '
       src='https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
       alt='logo'/>
       
       {user && ( 
-      <div className='flex p-2'>
+      <div className='flex p-2 justify-between'>
   {showGptSearch&&(
     <select className='py-2 px-4 mx-4 my-2 bg-gray-800 text-white'onChange={handleLang}>
     {SUPPORTED_LANGUAGES.map(lang=><option key={lang.identifier} value={lang.identifier}>{lang.name }</option>)}
@@ -70,9 +70,9 @@ useEffect(()=>{
         
         {showGptSearch ? "Home" : "GPT Search"}</button>
         
-        <img className ='w-12 h-12  'alt='userIcon' src='https://assets.leetcode.com/users/Karthikeya_06/avatar_1733218757.png'
+        <img className ='hidden md:block mt-0 md:w-12 h-12  'alt='userIcon' src='https://assets.leetcode.com/users/Karthikeya_06/avatar_1733218757.png'
       />
-        <button onClick={handleSignOut}className=' font-bold text-white p-2'>Sign Out</button>
+        <button onClick={handleSignOut}className=' py-0md:font-bold text-white p-2'>Sign Out</button>
       </div>)}
     </div>
       
