@@ -10,7 +10,7 @@ const MainContainer = () => {
     return null; // Return null if movies is null, undefined, or empty
   }
 
-  const mainMovie = movies[0];
+  const mainMovie = movies[1];
 
   if (!mainMovie) {
     return null; // Additional check to ensure mainMovie is not undefined
